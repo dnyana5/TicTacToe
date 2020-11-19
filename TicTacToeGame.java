@@ -1,51 +1,55 @@
 package tictactoe;
-
 import java.util.Scanner;
-
-public class TicTacToeGame {
+public class TicTacToeGame 
+{
 	static char playerInput='X';
 	static char computerInput='O';
-	public static void main(String[] args) {
-		char[][] ShowBoard = {{' ','|',' ','|',' '},
-				{'-','-','-','-','-'},
+	public static void main(String[] args) 
+	{
+		char[][] gameBoard = {{' ','|',' ','|',' '},
+				{'-','+','-','+','-'},
 				{' ','|',' ','|',' '},
-				{'-','-','-','-','-'},
+				{'-','+','-','+','-'},
 				{' ','|',' ','|',' '}};
 		determineInput();
-
+		printGameBoard(gameBoard);
 	}
-	//UC1
-	public static void displayGameBoard(char[][] ShowBoard){
-		for(char[] row:ShowBoard){
-                       for(char inputs:row){
-                               System.out.print(inputs);
-                       }
-                      
-        	 System.out.println();
-		}
+public static void printGameBoard(char[][] gameBoard){
+	for(char[] row:gameBoard)
+	{
+                   for(char c:row)
+                   {
+                           System.out.print(c);
+                   }
+                   System.out.println();
+    	}
 
-	}
+}
 	//UC2
 	public static void determineInput(){
         System.out.println("Choose an input letter 1.'O' or 2.'X' : ");
         Scanner scanner=new Scanner(System.in);
-while(true){
+        while(true)
+        {
         	int input=scanner.nextInt();
-        	if(input==1){
-		playerInput='O';
-        computerInput='X';
-		break;
-        	}else if(input==2){
-		playerInput='X';
-        computerInput='O';
+        	if(input==1)
+        	{
+        		playerInput='O';
+        		computerInput='X';
 		break;
         	}
-	else{
-		System.out.println("Enter a correct input!");
-	}
+        else if(input==2)
+        {
+        	playerInput='X';
+        	computerInput='O';
+		break;
+        }
+        else
+        	{
+        		System.out.println("Enter a correct input!");
+        	}
 }
- 	System.out.println("PlayerInput letter: "+playerInput);
-	System.out.println("Computer input letter : "+computerInput);
-
+ 	//System.out.println("PlayerInput letter: "+playerInput);
+	//System.out.println("Computer input letter : "+computerInput);
 }
 }
