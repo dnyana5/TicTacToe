@@ -7,20 +7,20 @@ public class TicTacToeGame
 	
 	public static void main(String[] args) 
 	{
+		//UC1:Declaration of Game Board
 		char[][] gameBoard = {{' ','|',' ','|',' '},
 							  {'-','+','-','+','-'},
 							  {' ','|',' ','|',' '},
 							  {'-','+','-','+','-'},
 							  {' ','|',' ','|',' '}};
 		determineInput();
-		//printGameBoard(gameBoard);
-//UC4
+		//UC3:Displaying Game Board
+		printGameBoard(gameBoard);
+		//UC4:Put element to desired Place
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter your placement (1-9)");
 		int place = scan.nextInt();
-		
 		System.out.println(place);
-		
 		switch(place)
 		{
 		case 1:
